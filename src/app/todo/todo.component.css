@@ -1,0 +1,23 @@
+.table{
+    border: 5px solid grey;
+}
+label{
+    padding: 0 8px 0 8px;
+}
+table thead{
+    background-color: rgb(87, 74, 50);
+    color:white;
+}
+.table tr:hover .fa-trash{
+   opacity: 1;
+}
+.row{
+    padding:3%;
+}
+.fa-trash{
+    color:red;
+    opacity: 0;
+}
+.btn-success{
+    margin: 10%;
+}

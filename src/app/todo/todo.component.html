@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row justify-content-center">
+      <form #f="ngForm" (ngSubmit)="onAddTask(f)"class="form-inline">
+        <div class="form-group">
+            <label for="name">Task</label>
+            <input class="form-control" type="text" id="name" name="name" required ngModel>
+        </div>
+        <div class="form-group">
+            <label for="priority">Priority</label>
+            <select class="form-control"   id="priority" name="priority" ngModel>
+              <option *ngFor = "let pr of priorities" [value]="pr">{{pr}}</option>
+            </select>
+        </div>
+       
+        <div class="form-group">
+          <button class="btn btn-success" [disabled]="f.invalid">Add</button>
+        </div>
+      </form>
+  </div>
+  <div class="row justify-content-center">
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width:50%;" scope="col" (click)="sortByTask()">Task name</th>
+          <th style="width:25%;" scope="col" (click)="sortByPriority()">Priority</th>
+          <th style="width:25%;" scope="col">Done</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let td of todos | paginate: {itemsPerPage: 5, currentPage: p}; let i = index ">
+          <td>{{td.name}}</td>
+          <td>{{td.priority}}</td>
+          <td><input type="checkbox" name="done" id="done"></td>
+          <td><i class="fa fa-trash fa-1x" (click)="onDeleteTask(i)"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  <span>Rows per page: 5</span><pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
