@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Running the app from github
 
-Choose the directory where you want to put the project. Then run `git clone https://github.com/dboniecki96/todo-list.git`. Then run `npm install` and finally `ng serve` to serve the project.
+Choose the directory where you want to put the project. Then run `git clone https://github.com/dboniecki96/todolist.git`. Then run `npm install` and finally `ng serve` to serve the project.
 
 ## Development server
 
